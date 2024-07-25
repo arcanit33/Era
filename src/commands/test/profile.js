@@ -4,23 +4,18 @@
 
 // module.exports = {
 // 	data: new SlashCommandBuilder()
-// 		.setName('getprofile')
-// 		.setDescription('Provides information about the user')
-//         .addUserOption(option =>
-//             option.setName('usertag')
-//                 .setDescription('user tag of progile you would like to get')
-//                 .setRequired(true)),
+// 		.setName('profile')
+// 		.setDescription('Provides information about the server.'),
 // 	async execute(interaction) {
 
 //         try {
-//             const userParam = interaction.options.getUser('usertag');
 //             const userRepo = dataSource.getRepository("User")
-//             const user = await userRepo.findOne({where: {discordId: userParam.id}})
+//             const user = await userRepo.findOne({where: {discordId: interaction.member.user.id}})
 //             await interaction.reply({
 //                 content: null,
 //                 embeds: [
 //                 {
-//                     description: `:cloud: Профіль — <@${user.discordId}>`,
+//                     description: `:cloud: Профіль — <@${interaction.member.id}>`,
 //                     color: 14408667,
 //                     fields: [
 //                     {

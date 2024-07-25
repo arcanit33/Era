@@ -16,14 +16,16 @@ module.exports = new EntitySchema({
         },
         level: {
             type: 'integer',
-            nullable: false
+            nullable: false,
+            default: 1
         },
         xp: {
-            type: 'integer',
-            nullable: false
+            type: 'float',
+            nullable: false,
+            default: 0
         },
         coins: {
-            type: 'integer',
+            type: 'float',
             nullable: false,
             default: 0
         },

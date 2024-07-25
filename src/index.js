@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, GatewayIntentBits } = require('discord.js');
 const dataSource = require('./db/index')
-// const {rolesForServerBoosters} = require('./data/roles');
+const {rolesForServerBoosters} = require('./data/roles');
 const { In, Not } = require('typeorm');
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMembers, GatewayIntentBits.GuildVoiceStates, GatewayIntentBits.GuildMessages, GatewayIntentBits.GuildPresences]});
@@ -12,7 +12,7 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBit
 dotenv.config();
 
 client.commands = new Collection();
-const {token, MODE} = process.env
+const {token, guildId, MODE} = process.env
 
 const foldersPath = path.join(__dirname, 'commands');
 const commandFolders = fs.readdirSync(foldersPath);

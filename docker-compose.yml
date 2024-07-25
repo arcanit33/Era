@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+  bot:
+    image: shya123/cloudsbot:latest
+    pull_policy: always
+
+    env_file:
+      - .env
+
+    restart: always
